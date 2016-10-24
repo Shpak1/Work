@@ -1,0 +1,16 @@
+﻿@model SportStoreForASPMVC5.WebUI.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@foreach(var prod in Model.Products)
+{
+@Html.Partial("ProductSummary", prod)
+}
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x=> Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+</div>
+
+<h2>SomeThing</h2>
+
